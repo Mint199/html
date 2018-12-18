@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Hex Color</title>
+
+<style>
+html {
+  height: 100%;
+}
+
+body {
+  width:1500px;
+  background: #e63c44;
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 39px;
+  font-weight: bold;
+}
+
+button#change {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 140px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  color: #e63c44;
+  border: none;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+    color: #fff;
+    display: block;
+    position: relative;
+    font-size: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    top: 40px;
+}
+
+/* Animation Layer */
+body, button#change {
+  transition: all 0.4s ease-in-out;
+}
+</style>
+
+</head>
+<body>
+
+<div>
+  <h1 id="colour">#e63c44</h1>
+  <button id="change">New Colour</button>
+</div>
+
+<script>
+var btn = document.getElementById('change');
+var text = document.getElementById('colour');
+
+var generator = function() {
+  newColour = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+  console.log(newColour.length);
+  if(newColour.length < 7) {
+    generator();
+  }
+}
+
+btn.addEventListener('click', function() {
+    generator();
+    
+    document.body.style.background = newColour;
+    btn.style.color = newColour;
+    text.innerText = newColour;
+});
+
+// dh = $(document).height();
+
+// $('#container').css({'padding-top':dh/3});
+
+// $('#change').click(function() {
+//     newColour = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+//     $('body').css({'background':newColour});
+//     $('#change').css({'color':newColour});
+//     $('#colour').text(newColour);
+// });
+</script>
+
+</body>
+</html>

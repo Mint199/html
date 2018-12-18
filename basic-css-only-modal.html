@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Basic CSS Only Modal</title>
+<meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1'>
+<style type='text/css'>
+.modal-window{position:fixed;background-color:rgba(255,255,255,0.25);top:0;right:0;bottom:0;left:0;z-index:999;opacity:0;pointer-events:none;-webkit-transition:all 0.3s;-moz-transition:all 0.3s;transition:all 0.3s}
+.modal-window:target{opacity:1;pointer-events:auto}
+.modal-window > div{width:400px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:2em;background:#fff;color:#333}
+.modal-window header{font-weight:bold}
+.modal-window h1{font-size:150%;margin:0 0 15px;color:#333}
+.modal-close{color:#aaa;line-height:50px;font-size:80%;position:absolute;right:0;text-align:center;top:0;width:70px;text-decoration:none}
+.modal-close:hover{color:#000}
+/* Demo Styles */
+html,body{height:100%}
+body{font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;background-color:#f69d75;color:#555}
+a{color:inherit}
+.container{display:grid;justify-content:center;align-items:center;height:100vh}
+.btn{background-color:#fff;padding:1em 1.5em;border-radius:3px;text-decoration:none}
+.btn i{padding-right:0.3em}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<div class="interior">
+<a class="btn" href="#open-modal">Open Modal</a>
+</div>
+</div>
+
+<div id="open-modal" class="modal-window">
+<div>
+<a href="#" title="Close" class="modal-close">Close</a>
+<h1>Voilà!</h1>
+<div>A CSS-only modal based on the :target pseudo-class.<br><br><a href="https://codepen.io/timothylong/pen/HhAer" target="_blank">Edit on Codepen.</a></div>
+</div>
+</div>
+
+</body>
+</html>
