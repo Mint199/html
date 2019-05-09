@@ -1,5 +1,4 @@
 # Resources HTML
-You can copy or save the source of this code
 
 ## Getting Started
 The HTML that is here is made public, so if you want to save or copy the source code this is very permissible.
